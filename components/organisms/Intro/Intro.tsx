@@ -16,6 +16,10 @@ const IntroData: IIntroData = {
     [EIntro.main] : {
         image: '/images/main/intro.png',
         text: 'Creative Design Group!',
+    },
+    [EIntro.about] : {
+        image: '/images/about/intro.png',
+        text: '',
     }
 }
 interface IIntro {
@@ -42,7 +46,7 @@ const SIntro = styled.section<{
   font-size: 30px;
   
   background: url(${({type}) => IntroData[type].image}) no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 `
 
 export default Intro
