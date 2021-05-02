@@ -17,6 +17,7 @@ const NavigationItem = ({url, children}: INavigationItem) =>
 const SNavigationItem = styled.button`
   cursor: pointer;
   padding: 10px 20px;
+  min-width: 100px;
   width: auto;
   height: 30px;
   border-radius: 15px;
