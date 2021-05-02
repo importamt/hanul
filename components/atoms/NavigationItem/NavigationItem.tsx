@@ -28,6 +28,8 @@ const SNavigationItem = styled.button`
   align-items: center;
   margin: 5px;
   color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+
 `
 
 export default NavigationItem

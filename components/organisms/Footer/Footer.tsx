@@ -20,8 +20,10 @@ const SFooter = styled.footer`
   
   & p {
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+
   }
 `
 

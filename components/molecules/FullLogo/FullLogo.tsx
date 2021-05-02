@@ -15,6 +15,8 @@ const SFullLogo = styled.a`
   align-items: center;
   
   & b {
+    font-family: 'Noto Sans KR', sans-serif;
+
     margin: 0 10px;
     color: white;
     font-size: 15px;

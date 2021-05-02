@@ -6,11 +6,12 @@ const GlobalStyle = createGlobalStyle`
   * {
     text-decoration: none;
   }
+
   button {
     background: none;
     border: none;
     padding: 0;
   }
-`
 
+`
 export default GlobalStyle

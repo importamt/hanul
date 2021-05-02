@@ -10,13 +10,15 @@ const Resolution = () => <SResolution>
     <p>고객 곁의 믿을 수 있는 든든한 파트너  한울기획!</p>
 </SResolution>
 const SResolution = styled.section`
-  height: 380px;
+  height: 300px;
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  
+  font-family: 'Noto Sans KR', sans-serif;
+
   & b {
+    
     color: black;
     font-size: 30px;
     font-weight: 700;

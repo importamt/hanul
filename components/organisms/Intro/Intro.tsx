@@ -43,6 +43,7 @@ const SIntro = styled.section<{
   justify-content: center;
   align-items: center;
   color: black;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 30px;
   
   background: url(${({type}) => IntroData[type].image}) no-repeat;

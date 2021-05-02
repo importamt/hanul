@@ -1,4 +1,5 @@
 import Document from 'next/document'
+
 import {ServerStyleSheet} from 'styled-components'
 import GlobalStyle from "../styles/global-styles";
 
@@ -32,4 +33,5 @@ export default class MyDocument extends Document {
             sheet.seal()
         }
     }
+
 }
