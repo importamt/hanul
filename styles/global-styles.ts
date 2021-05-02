@@ -3,6 +3,9 @@ import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  * {
+    text-decoration: none;
+  }
   button {
     background: none;
     border: none;
