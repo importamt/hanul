@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import Logo from "../../atoms/Logo/Logo";
 import Navigation from "../../molecules/Navigation/Navigation";
+import Link from "next/link";
+import FullLogo from "../../molecules/FullLogo/FullLogo";
 
 const SHeader = styled.header`
   width: 100%;
@@ -13,7 +14,9 @@ const SHeader = styled.header`
 `
 
 const Header = () => <SHeader>
-    <Logo/>
+    <Link href={'/'} passHref>
+        <FullLogo/>
+    </Link>
     <Navigation/>
 </SHeader>
 
