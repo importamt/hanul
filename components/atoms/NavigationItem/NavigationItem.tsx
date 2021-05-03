@@ -19,14 +19,14 @@ const SNavigationItem = styled.button`
   padding: 10px 20px;
   min-width: 100px;
   width: auto;
-  height: 30px;
+  height: 25px;
   border-radius: 15px;
   background-color: transparent;
-  border: 2px solid white;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 5px 30px;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
 
