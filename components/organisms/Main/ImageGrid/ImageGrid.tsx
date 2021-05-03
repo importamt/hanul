@@ -4,10 +4,11 @@ import ImageGridItem, {IImageGridItem} from "../../../molecules/ImageGridItem/Im
 interface IImageGrid {
     column: number,
     row: number,
+    handleGridItemClick: Function,
     imageGridItems: IImageGridItem[]
 }
 
-const drawGrid = (column: number, row: number, imageGridItems: IImageGridItem[]) => {
+const drawGrid = (column: number, row: number, handleGridItemClick:Function, imageGridItems: IImageGridItem[]) => {
     const imageGridItemComponents = []
 
     for (let i = 0; i < row; i++) {
@@ -16,7 +17,7 @@ const drawGrid = (column: number, row: number, imageGridItems: IImageGridItem[])
             const imageGridItem = imageGridItems[index]
             if (imageGridItem) {
                 imageGridItemComponents.push(
-                    <ImageGridItem key={index} image={imageGridItem.image} text={imageGridItem.text}/>)
+                    <ImageGridItem key={index} image={imageGridItem.image} text={imageGridItem.text} handleGridItemClick={() => handleGridItemClick(index+1)}/>)
             } else {
                 imageGridItemComponents.push(<ImageGridItem key={index} image={null} text={null}/>)
             }
@@ -25,9 +26,9 @@ const drawGrid = (column: number, row: number, imageGridItems: IImageGridItem[])
 
     return imageGridItemComponents
 }
-export const ImageGrid = ({column, row, imageGridItems}: IImageGrid) => {
+export const ImageGrid = ({column, row, handleGridItemClick, imageGridItems}: IImageGrid) => {
     return <SImageGrid column={column} row={row}>
-        {drawGrid(column, row, imageGridItems)}
+        {drawGrid(column, row, handleGridItemClick, imageGridItems)}
     </SImageGrid>
 }
 
@@ -36,7 +37,9 @@ const SImageGrid = styled.ul<{
     row: number,
 }>`
   
+  max-width: 1440px;
   width: 100vw;
+  max-height: 1440px;
   height: 100vw;
   
   display: grid;

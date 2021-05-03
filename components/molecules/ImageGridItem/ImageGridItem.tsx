@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import {MouseEventHandler} from "react";
 
 export interface IImageGridItem {
     image: string | null,
     text: string | null,
+    handleGridItemClick?: MouseEventHandler<HTMLLIElement>,
 }
 
-const ImageGridItem = ({image, text}: IImageGridItem) => <SImageGridItem image={image} text={text}/>
+const ImageGridItem = ({image, text, handleGridItemClick}: IImageGridItem) => <SImageGridItem image={image} text={text} onClick={handleGridItemClick}/>
 
 const SImageGridItem = styled.li<{
     image: string,
@@ -14,7 +16,7 @@ const SImageGridItem = styled.li<{
   width: 100%;
   height: 100%;
   background: ${({image}) => image?`url(${image})`:'#ff000020'} no-repeat center center;
-  background-size: 50%;
+  background-size: 100% 100%;
   position: relative;
   
   &:before {
