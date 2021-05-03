@@ -14,7 +14,7 @@ const SNavigation = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px 0;
+  margin-top: 70px;
 `
 
 export default Navigation
