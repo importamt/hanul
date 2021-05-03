@@ -21,7 +21,7 @@ const SFooter = styled.footer`
   & p {
     color: white;
     font-size: 12px;
-    line-height: 30px;
+    line-height: 20px;
     font-family: 'Noto Sans KR', sans-serif;
 
   }
