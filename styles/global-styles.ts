@@ -12,6 +12,15 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     padding: 0;
   }
+  
+  input {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
 
 `
 export default GlobalStyle
