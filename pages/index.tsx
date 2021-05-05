@@ -1,7 +1,6 @@
 import Hero from "../components/organisms/Hero/Hero";
 import Footer from "../components/organisms/Footer/Footer";
-import Resolution from "../components/organisms/Main/Resolution/Resolution";
-import {ImageGrid} from "../components/organisms/Main";
+import {ImageGrid, Resolution} from "../components/organisms/Main";
 import styled from "styled-components";
 import {IImageGridItem} from "../components/molecules/ImageGridItem/ImageGridItem";
 import {useEffect, useState} from "react";
@@ -30,16 +29,26 @@ const MainPage = () => {
         <Header/>
         <Hero
             image={'/images/main/hero.png'}
-            text={'Creative Design Group!'}
-            height={403}
-        />
-        <Resolution/>
+            height={403}>
+            <SHeroText>Creative Design Group!</SHeroText>
+        </Hero>
+        <Resolution>
+            <b>VISION 2021</b>
+            <p>"더 멀리 더 높이 비상하는 디자인 전문기업"</p>
+        </Resolution>
         <ImageGrid column={3} row={3} imageGridItems={imageGridItems} handleGridItemClick={index => setSelectedPopup({
             image: `/images/main/popup${index}.jpg`
         } as IPopup)}/>
         <Footer/>
     </SMainPage>
 }
+
+const SHeroText = styled.b`
+  color: black;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 30px;
+`
+
 const SMainPage = styled.main`
   width: 100vw;
   display: flex;
