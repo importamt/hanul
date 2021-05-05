@@ -2,6 +2,7 @@ import Header from "../../components/organisms/Header/Header";
 import Footer from "../../components/organisms/Footer/Footer";
 import styled from "styled-components";
 import Hero from "../../components/organisms/Hero/Hero";
+import {Clients} from "../../components/organisms/Main";
 
 const About = () => {
 
@@ -13,6 +14,7 @@ const About = () => {
         <Hero
             image={'/images/about/hero2.png'}
             height={1230}/>
+        <Clients/>
         <Footer/>
     </SAbout>
 }
