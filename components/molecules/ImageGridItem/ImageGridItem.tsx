@@ -5,19 +5,22 @@ export interface IImageGridItem {
     image: string | null,
     text: string | null,
     handleGridItemClick?: MouseEventHandler<HTMLLIElement>,
+    span?: number
 }
 
-const ImageGridItem = ({image, text, handleGridItemClick}: IImageGridItem) => <SImageGridItem image={image} text={text} onClick={handleGridItemClick}/>
+const ImageGridItem = ({image, text, handleGridItemClick, span=1}: IImageGridItem) => <SImageGridItem image={image} text={text} span={span} onClick={handleGridItemClick}/>
 
 const SImageGridItem = styled.li<{
     image: string,
     text: string,
+    span: number,
 }>`
   width: 100%;
   height: 100%;
   background: ${({image}) => image?`url(${image})`:'#ff000020'} no-repeat center center;
   background-size: 100% 100%;
   position: relative;
+  grid-column: span ${({span})=>span};
   
   &:before {
     position: absolute;

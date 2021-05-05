@@ -1,33 +1,39 @@
 import styled from "styled-components";
 import ImageGridItem, {IImageGridItem} from "../../../molecules/ImageGridItem/ImageGridItem";
+import {CSSProperties, useEffect, useRef} from "react";
 
 interface IImageGrid {
     column: number,
     row: number,
     handleGridItemClick: Function,
     imageGridItems: IImageGridItem[]
+    style?: CSSProperties
 }
 
-const drawGrid = (column: number, row: number, handleGridItemClick:Function, imageGridItems: IImageGridItem[]) => {
-    const imageGridItemComponents = []
+const drawGrid = (column: number, row: number, handleGridItemClick: Function, imageGridItems: IImageGridItem[]) => {
+    return imageGridItems
+        .map((imageGridItem, index) =>
+            <ImageGridItem key={index} image={imageGridItem.image} span={imageGridItem.span} text={imageGridItem.text}
+                           handleGridItemClick={() => handleGridItemClick && handleGridItemClick(index + 1)}/>)
+}
+export const ImageGrid = ({column, row, handleGridItemClick, imageGridItems, style}: IImageGrid) => {
 
-    for (let i = 0; i < row; i++) {
-        for (let j = 0; j < column; j++) {
-            const index = i * row + j
-            const imageGridItem = imageGridItems[index]
-            if (imageGridItem) {
-                imageGridItemComponents.push(
-                    <ImageGridItem key={index} image={imageGridItem.image} text={imageGridItem.text} handleGridItemClick={() => handleGridItemClick(index+1)}/>)
-            } else {
-                imageGridItemComponents.push(<ImageGridItem key={index} image={null} text={null}/>)
-            }
-        }
+    const imageGridRef = useRef<HTMLUListElement>()
+
+    const handleResize = () => {
+        const imageGrid = imageGridRef.current
+        imageGrid.style.height = ((imageGrid.offsetWidth / column) * row) + 'px'
     }
 
-    return imageGridItemComponents
-}
-export const ImageGrid = ({column, row, handleGridItemClick, imageGridItems}: IImageGrid) => {
-    return <SImageGrid column={column} row={row}>
+    useEffect(() => {
+        handleResize()
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, [])
+
+    return <SImageGrid ref={imageGridRef} column={column} row={row} style={style}>
         {drawGrid(column, row, handleGridItemClick, imageGridItems)}
     </SImageGrid>
 }
@@ -36,13 +42,12 @@ const SImageGrid = styled.ul<{
     column: number,
     row: number,
 }>`
-  
-  max-width: 1440px;
+
+  max-width: 1280px;
   width: 100vw;
-  max-height: 1440px;
-  height: 100vw;
-  
+
   display: grid;
   grid-template-rows: repeat(${({row}) => row}, 1fr);
+  column-count: ${({row}) => row + 1};
   grid-template-columns: repeat(${({column}) => column}, 1fr);
 `
