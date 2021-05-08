@@ -1,28 +1,56 @@
 import styled from "styled-components";
+
 import Header from "../../components/organisms/Header/Header";
 import Footer from "../../components/organisms/Footer/Footer";
 import Hero from "../../components/organisms/Hero/Hero";
-import {init} from 'emailjs-com';
+import {init, send} from 'emailjs-com';
 import {useEffect, useState} from "react";
 import {Agreement, CompanyInfo, Fieldset} from "../../components/organisms/Main";
 
 const ContactUs = () => {
     useEffect(() => {
-        init('user_VGXgkQQk4KG5Ngjj56mPa')
-
-        // emailjs.send("hanul_test", "template_fxz7eln", {
-        //     name: "aa",
-        //     phone: "bb",
-        //     email: "cc",
-        //     message: "dd",
-        // }).then()
-
+        init(process.env.EMAILJS_USER_ID)
     }, [])
 
-    const [name, setName] = useState(null)
-    const [phone, setPhone] = useState(null)
-    const [email, setEmail] = useState(null)
-    const [message, setMessage] = useState(null)
+
+    const [name, setName] = useState<string>('')
+    const [phone, setPhone] = useState<string>('')
+    const [email, setEmail] = useState<string>('')
+    const [message, setMessage] = useState<string>('')
+    const [isAgree, setAgree] = useState<boolean>(false)
+
+    const sendEmail = () => {
+        if(!isAgree) {
+            alert('개인정보 수집 및 이용에 동의해주세요.')
+            return
+        }
+        if( !name || name === '') {
+            alert('이름을 입력해주세요.')
+            return;
+        }
+        if( !phone || phone === '') {
+            alert('전화번호를 입력해주세요.')
+            return;
+        }
+        if( !email || email === '') {
+            alert('이메일을 입력해주세요.')
+            return;
+        }
+        if( !message || message === '') {
+            alert('내용을 입력해주세요.')
+            return;
+        }
+
+        send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, {
+            name: name,
+            phone: phone,
+            email: email,
+            message: message,
+        }).then(response => {
+            console.log("RESPONSE : ", response)
+            alert("OK!")
+        })
+    }
 
     return <SContact>
         <Header/>
@@ -37,14 +65,23 @@ const ContactUs = () => {
             <SHeroText>고객 곁의 믿을 수 있는 든든한 파트너 한울기획!</SHeroText>
         </Hero>
         <SBlock/>
-        <Fieldset/>
-        <Agreement/>
-        <SSendButton>SEND</SSendButton>
+        <Fieldset
+            name={name}
+            setName={setName}
+            phone={phone}
+            setPhone={setPhone}
+            email={email}
+            setEmail={setEmail}
+            message={message}
+            setMessage={setMessage}
+        />
+        <Agreement isAgree={isAgree} setAgree={setAgree}/>
+        <SSendButton onClick={sendEmail}>SEND</SSendButton>
         <CompanyInfo/>
-        <SBlock/>
         <Footer/>
     </SContact>
 }
+
 
 const SBlock = styled.div`
   width: 1px;
