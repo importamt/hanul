@@ -100,11 +100,12 @@ const SHeroText = styled.p`
   align-items: center;
   line-height: 22px;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.8vw;
+  font-size: 10px;
   font-weight: 400;
 
   @media only screen and (min-width: ${({theme}) => theme.media.tablet}px) {
     line-height: 2vw;
+    font-size: 14px;
   }
 `
 
