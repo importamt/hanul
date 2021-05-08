@@ -86,7 +86,11 @@ const ContactUs = () => {
 
 const SBlock = styled.div`
   width: 1px;
-  height: 130px;
+  height: 60px;
+
+  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+    height: 10vw;
+  }
 `
 
 const SHeroText = styled.p`
@@ -96,8 +100,12 @@ const SHeroText = styled.p`
   align-items: center;
   line-height: 22px;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 10px;
+  font-size: 0.8vw;
   font-weight: 400;
+
+  @media only screen and (min-width: ${({theme}) => theme.media.tablet}px) {
+    line-height: 2vw;
+  }
 `
 
 const SContact = styled.main`
