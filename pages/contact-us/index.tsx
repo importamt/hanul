@@ -59,7 +59,8 @@ const ContactUs = () => {
             height={403}
         >
             <SBlock/>
-            <SHeroText>더 멀리 더 높이 더 크고 바른 이상과 뜻을 가슴에 품고 미래를 이끌어 가는 '한울기획'이 되고자 합니다</SHeroText>
+            <SHeroText>더 멀리 더 높이 더 크고 바른 이상과 뜻을 가슴에 품고 </SHeroText>
+            <SHeroText>미래를 이끌어 가는 '한울기획'이 되고자 합니다</SHeroText>
             <SHeroText>"한울"은 언제나 고객의 입장에서 고객의 니즈를 정확하게 파악하고</SHeroText>
             <SHeroText>탁월한 크리에이티브와 풍부한 노하우로 완성도 높은 최고의 발간물을 제작하겠습니다!</SHeroText>
             <SHeroText>고객 곁의 믿을 수 있는 든든한 파트너 한울기획!</SHeroText>
@@ -93,9 +94,9 @@ const SHeroText = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 25px;
+  line-height: 22px;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
 `
 

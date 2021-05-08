@@ -71,7 +71,7 @@ const SAgreementCheck = styled.label`
   align-items: center;
   justify-content: space-between;
   
-  padding: 10px 20px;
+  padding: 10px 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 12px;
   font-weight: 400;

@@ -21,7 +21,7 @@ const SImageGridItem = styled.li<{
   background-size: 100% 100%;
   position: relative;
   grid-column: span ${({span})=>span};
-  
+
   &:before {
     position: absolute;
     width: 100%;
@@ -54,10 +54,17 @@ const SImageGridItem = styled.li<{
   &:hover:after {
     color: white;
     font-family: 'Noto Sans KR', sans-serif;
-
+    font-size: 10px;
+    
     content: '${({text}) => text}';
     opacity: 0.5;
     background-color: black;
+    
+    text-align: center;
+
+    @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+      font-size: 15px;
+    }
   }
 `
 

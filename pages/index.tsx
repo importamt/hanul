@@ -44,13 +44,18 @@ const MainPage = () => {
 }
 
 const SHeroText = styled.b`
+  cursor: pointer;
   color: black;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   
   &:hover {
     transition: color 2s;
     color: white;
+  }
+
+  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+    font-size: 30px;
   }
 `
 

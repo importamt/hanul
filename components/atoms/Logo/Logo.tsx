@@ -7,8 +7,12 @@ const SLogo = styled.a`
   position: relative;
   width: 396px;
   height: 106px;
-  background: url(${logoImage}) no-repeat;
-  background-size: 100% 100%;
+  background: url(${logoImage}) center center no-repeat;
+  background-size: 75% 75%;
+
+  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+    background-size: 100% 100%;
+  }
 `
 
 const Logo = React.forwardRef(

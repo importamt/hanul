@@ -26,14 +26,21 @@ const SNavigationItem = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px 30px;
+  margin: 5px 10px;
+  
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10px;
   
   &:hover {
     transition: color 500ms, border 500ms;
     border: 1px solid deepskyblue;
     color: deepskyblue;
+  }
+
+  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+    font-size: 15px;
+    margin: 5px 30px;
   }
 `
 

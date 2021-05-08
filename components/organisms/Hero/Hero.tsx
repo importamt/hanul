@@ -18,7 +18,6 @@ const Hero = (props: IHero) => {
         const width = props.width || 1920
         hero.style.height = document.body.clientWidth / width * props.height + 'px'
     }
-
     useResize(handleResize)
 
     return <SHero ref={heroRef} {...props}>
