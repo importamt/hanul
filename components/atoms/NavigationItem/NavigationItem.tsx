@@ -29,7 +29,12 @@ const SNavigationItem = styled.button`
   margin: 5px 30px;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
-
+  
+  &:hover {
+    transition: color 500ms, border 500ms;
+    border: 1px solid deepskyblue;
+    color: deepskyblue;
+  }
 `
 
 export default NavigationItem
