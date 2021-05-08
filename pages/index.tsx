@@ -47,6 +47,11 @@ const SHeroText = styled.b`
   color: black;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 30px;
+  
+  &:hover {
+    transition: color 2s;
+    color: white;
+  }
 `
 
 const SMainPage = styled.main`
