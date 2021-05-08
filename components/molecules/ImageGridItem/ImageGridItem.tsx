@@ -53,6 +53,8 @@ const SImageGridItem = styled.li<{
   
   &:hover:after {
     color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+
     content: '${({text}) => text}';
     opacity: 0.5;
     background-color: black;
