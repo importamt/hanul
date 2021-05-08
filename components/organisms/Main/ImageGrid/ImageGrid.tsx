@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ImageGridItem, {IImageGridItem} from "../../../molecules/ImageGridItem/ImageGridItem";
-import {CSSProperties, useEffect, useRef} from "react";
+import {CSSProperties, useRef} from "react";
+import useResize from "../../../../hook/useResize";
 
 interface IImageGrid {
     column: number,
@@ -25,13 +26,7 @@ export const ImageGrid = ({column, row, handleGridItemClick, imageGridItems, sty
         imageGrid.style.height = ((imageGrid.offsetWidth / column) * row) + 'px'
     }
 
-    useEffect(() => {
-        handleResize()
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        }
-    }, [])
+    useResize(handleResize)
 
     return <SImageGrid ref={imageGridRef} column={column} row={row} style={style}>
         {drawGrid(column, row, handleGridItemClick, imageGridItems)}
