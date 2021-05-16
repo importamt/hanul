@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {MouseEventHandler, ReactElement} from "react";
+import {MouseEventHandler, ReactElement, useRef} from "react";
+import useResize from "../../../hook/useResize";
 
 export interface IImageGridItem {
     image: string | null,
@@ -9,10 +10,21 @@ export interface IImageGridItem {
     span?: number
 }
 
-const ImageGridItem = ({image, text, handleGridItemClick, column, span = 1}: IImageGridItem) =>
-    <SImageGridItem image={image} column={column} span={span} onClick={handleGridItemClick}>
+const ImageGridItem = ({image, text, handleGridItemClick, column, span = 1}: IImageGridItem) => {
+
+    const imageGridRefItem = useRef<HTMLLIElement>()
+
+    const handleResize = () => {
+        const imageGridItem = imageGridRefItem.current
+        imageGridItem.style.height = (imageGridItem.offsetWidth / span) + 'px'
+    }
+
+    useResize(handleResize)
+
+    return <SImageGridItem ref={imageGridRefItem} image={image} column={column} span={span} onClick={handleGridItemClick}>
         <SHover>{text}</SHover>
     </SImageGridItem>
+}
 
 const SHover = styled.aside`
   font-family: 'Noto Sans KR', sans-serif;
@@ -51,14 +63,13 @@ const SImageGridItem = styled.li<{
     column: number,
     span: number,
 }>`
+  display: inline-block;
   width: calc(100% / ${({column,span}) => column * 1/span});
-  height: calc(100% / ${({column}) => column});
+   height: calc(100% / ${({column}) => column} - 1px);
   background: ${({image}) => image ? `url(${image})` : '#000000'} no-repeat center center;
   background-size: 100% 100%;
   position: relative;
-  grid-column: span ${({span}) => span};
-  float: left;
-
+  
   &:hover {
     color: white;
   }

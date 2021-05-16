@@ -41,12 +41,8 @@ const SImageGrid = styled.ul<{
   max-width: 1280px;
   width: 100vw;
   overflow: hidden;
-
-  //display: grid;
-  //grid-template-rows: repeat(${({row}) => row}, 1fr);
-  //  column-count: ${({row}) => row + 1};
-  //grid-template-columns: repeat(${({column}) => column}, 1fr);
   
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   
 `
