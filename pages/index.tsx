@@ -13,14 +13,60 @@ const MainPage = () => {
     const [selectedPopup, setSelectedPopup] = useState<IPopup>(null)
     const [imageGridItems, setImageGridItems] = useState<IImageGridItem[]>([])
 
-    const texts = ['2019 원자력 운전 연보 \\A 한국원자력기술원',
-        '교육훈련안내 \\A 대한상공회의소', '선박법 법령집 \\A 해양수산부',
-        '학교안내 브로셔 \\A 쎈테니얼크리스챤스쿨', '30년사(백서) \\A ' +
-        '한국원자력기술원', '웹용지방의정브리프 \\A ' +
-        '한국지방행정연구원', '패키지 디자인 \\A ' +
-        '메일유업', '비타플러스씨 \\A ' +
-        '패키지 디자인', '덴치로 \\A ' +
-        '정우제약'
+    const texts = [
+        <>
+            <SImageGridTitle>2019 원자력 운전 연보</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>한국원자력기술원</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>교육훈련안내</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>대한상공회의소</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>선박법 법령집</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>해양수산부</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>학교안내 브로셔</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>쎈테니얼크리스챤스쿨</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>30년사(백서)</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>한국원자력기술원</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>웹용지방의정브리프</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>한국지방행정연구원</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>패키지 디자인</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>메일유업</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>비타플러스씨</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>패키지 디자인</SImageGridText>
+        </>,
+
+        <>
+            <SImageGridTitle>덴치로</SImageGridTitle>
+            <SImageGridDot className={'dot'}/>
+            <SImageGridText>정우제약</SImageGridText>
+        </>,
     ]
 
 
@@ -54,6 +100,25 @@ const MainPage = () => {
         <Footer/>
     </SMainPage>
 }
+
+const SImageGridText = styled.b`
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 50px;
+`
+
+const SImageGridTitle = styled(SImageGridText)`
+  font-size: 20px;
+`
+
+export const SImageGridDot = styled.figure`
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: white;
+  line-height: 50px;
+`
 
 const SHeroText = styled.b`
   cursor: pointer;

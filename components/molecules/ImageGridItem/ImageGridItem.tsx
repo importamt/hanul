@@ -1,71 +1,65 @@
 import styled from "styled-components";
-import {MouseEventHandler} from "react";
+import {MouseEventHandler, ReactElement} from "react";
 
 export interface IImageGridItem {
     image: string | null,
-    text: string | null,
+    text: string | ReactElement | null,
     handleGridItemClick?: MouseEventHandler<HTMLLIElement>,
     span?: number
 }
 
-const ImageGridItem = ({image, text, handleGridItemClick, span=1}: IImageGridItem) => <SImageGridItem image={image} text={text} span={span} onClick={handleGridItemClick}/>
+const ImageGridItem = ({image, text, handleGridItemClick, span = 1}: IImageGridItem) =>
+    <SImageGridItem image={image} span={span} onClick={handleGridItemClick}>
+        <SHover>{text}</SHover>
+    </SImageGridItem>
+
+const SHover = styled.aside`
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  background-color: transparent;
+
+  &:hover {
+    transition: background-color 500ms, color 500ms;
+    color: white;
+    background: #000000C0;
+
+    & .dot {
+      background-color: white;
+    }
+  }
+
+  & .dot {
+    transition: background-color 500ms, color 500ms;
+    background-color: transparent;
+  }
+`
 
 const SImageGridItem = styled.li<{
     image: string,
-    text: string,
     span: number,
 }>`
   width: 100%;
   height: 100%;
-  background: ${({image}) => image?`url(${image})`:'#ff000020'} no-repeat center center;
+  background: ${({image}) => image ? `url(${image})` : '#ff000020'} no-repeat center center;
   background-size: 100% 100%;
   position: relative;
-  grid-column: span ${({span})=>span};
+  grid-column: span ${({span}) => span};
 
-  &:before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    content: '';
-  }
-  
-  &:nth-child(even):before {
-    background-color: ${({theme})=> theme.colors.subOne};
-  }
 
-  &:nth-child(odd):before {
-    background-color: ${({theme})=> theme.colors.subTwo};
-  }
-    
-  &:after {
-    content: '';
-    cursor: pointer;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 500ms;
-  }
-  
-  &:hover:after {
+  &:hover {
     color: white;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 10px;
-
-    white-space: pre;
-    content: '${({text}) => text}';
-    opacity: 0.6;
-    background-color: black;
-    
-    text-align: center;
-
-    @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
-      font-size: 15px;
-    }
+    background-blend-mode: darken;
   }
 `
 
