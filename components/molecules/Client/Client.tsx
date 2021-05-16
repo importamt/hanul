@@ -6,8 +6,8 @@ interface IClient {
 const Client = ({image}) => <SClient image={image}/>
 
 const SClient = styled.li<IClient>`
-  width: 420px;
-  height: 115px;
+  width: 300px;
+  height: 85px;
   margin: 10px;
   
   background: url(${({image})=> image}) no-repeat;

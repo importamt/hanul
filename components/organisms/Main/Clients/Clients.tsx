@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import Image from "next/image"
 import Client from "../../../molecules/Client/Client";
 
 export const Clients = () => {
 
     const clients = []
-    for(let i = 0 ; i < 12 ; i ++ ) {
+    for (let i = 0; i < 12; i++) {
         clients.push(
-            <Client key={i} image={`/images/about/client${i+1}.png`}/>
+            <Client key={i} image={`/images/about/client${i + 1}.png`}/>
         )
     }
 
@@ -25,7 +24,7 @@ const SClientsTitle = styled.h1<{
   width: 300px;
   height: 40px;
   margin: 20px 0;
-  background: url(${({image})=> image}) no-repeat;
+  background: url(${({image}) => image}) no-repeat;
   background-size: 100% 100%;
 `
 
@@ -40,6 +39,7 @@ const SClientsWrap = styled.section`
 
 const SClients = styled.ul`
   display: flex;
+  padding: 0 15vw;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
