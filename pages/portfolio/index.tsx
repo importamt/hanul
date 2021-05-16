@@ -15,7 +15,7 @@ const Portfolio = () => {
         for (let i = 0; i < 38; i++) {
             imageGridItems.push({
                 image: `/images/portfolio/grid/${i + 1}.jpg`,
-                text: `Template String ${i + 1}`,
+                text: `Work ${i + 1}`,
                 span: (i === 15 || i === 29 || i === 35 || i === 36 ? 2 : 1),
             } as IImageGridItem)
         }
