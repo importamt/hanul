@@ -7,7 +7,7 @@ export const Resolution = ({children}) => <SResolution>
 const grayLogo = '/images/common/gray_logo.png'
 const SResolution = styled.section`
   width: 100%;
-  min-height: 270px;
+  height: 270px;
   display: flex;
   align-items: center;
   justify-content: center;
