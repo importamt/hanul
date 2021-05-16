@@ -12,12 +12,24 @@ const MainPage = () => {
 
     const [selectedPopup, setSelectedPopup] = useState<IPopup>(null)
     const [imageGridItems, setImageGridItems] = useState<IImageGridItem[]>([])
+
+    const texts = ['2019 원자력 운전 연보 \\A 한국원자력기술원',
+        '교육훈련안내 \\A 대한상공회의소', '선박법 법령집 \\A 해양수산부',
+        '학교안내 브로셔 \\A 쎈테니얼크리스챤스쿨', '30년사(백서) \\A ' +
+        '한국원자력기술원', '웹용지방의정브리프 \\A ' +
+        '한국지방행정연구원', '패키지 디자인 \\A ' +
+        '메일유업', '비타플러스씨 \\A ' +
+        '패키지 디자인', '덴치로 \\A ' +
+        '정우제약'
+    ]
+
+
     useEffect(() => {
         const imageGridItems = []
         for (let i = 0; i < 9; i++) {
             imageGridItems.push({
                 image: `/images/main/grid${i + 1}.jpg`,
-                text: `Template String ${i + 1}`
+                text: texts[i]
             } as IImageGridItem)
         }
         setImageGridItems(imageGridItems)

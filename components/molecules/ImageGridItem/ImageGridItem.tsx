@@ -55,9 +55,10 @@ const SImageGridItem = styled.li<{
     color: white;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 10px;
-    
+
+    white-space: pre;
     content: '${({text}) => text}';
-    opacity: 0.5;
+    opacity: 0.6;
     background-color: black;
     
     text-align: center;
