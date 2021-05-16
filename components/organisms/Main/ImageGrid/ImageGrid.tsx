@@ -14,7 +14,7 @@ interface IImageGrid {
 const drawGrid = (column: number, row: number, handleGridItemClick: Function, imageGridItems: IImageGridItem[]) => {
     return imageGridItems
         .map((imageGridItem, index) =>
-            <ImageGridItem key={index} image={imageGridItem.image} span={imageGridItem.span} text={imageGridItem.text}
+            <ImageGridItem key={index} image={imageGridItem.image} column={column} span={imageGridItem.span} text={imageGridItem.text}
                            handleGridItemClick={() => handleGridItemClick && handleGridItemClick(index + 1)}/>)
 }
 export const ImageGrid = ({column, row, handleGridItemClick, imageGridItems, style}: IImageGrid) => {
@@ -41,8 +41,11 @@ const SImageGrid = styled.ul<{
   max-width: 1280px;
   width: 100vw;
 
-  display: grid;
-  grid-template-rows: repeat(${({row}) => row}, 1fr);
-  column-count: ${({row}) => row + 1};
-  grid-template-columns: repeat(${({column}) => column}, 1fr);
+  //display: grid;
+  //grid-template-rows: repeat(${({row}) => row}, 1fr);
+  //  column-count: ${({row}) => row + 1};
+  //grid-template-columns: repeat(${({column}) => column}, 1fr);
+  
+  display: block;
+  
 `

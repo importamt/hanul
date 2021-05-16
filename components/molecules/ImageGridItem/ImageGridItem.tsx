@@ -5,11 +5,12 @@ export interface IImageGridItem {
     image: string | null,
     text: string | ReactElement | null,
     handleGridItemClick?: MouseEventHandler<HTMLLIElement>,
+    column: number,
     span?: number
 }
 
-const ImageGridItem = ({image, text, handleGridItemClick, span = 1}: IImageGridItem) =>
-    <SImageGridItem image={image} span={span} onClick={handleGridItemClick}>
+const ImageGridItem = ({image, text, handleGridItemClick, column, span = 1}: IImageGridItem) =>
+    <SImageGridItem image={image} column={column} span={span} onClick={handleGridItemClick}>
         <SHover>{text}</SHover>
     </SImageGridItem>
 
@@ -47,15 +48,16 @@ const SHover = styled.aside`
 
 const SImageGridItem = styled.li<{
     image: string,
+    column: number,
     span: number,
 }>`
-  width: 100%;
-  height: 100%;
+  width: calc(100% / ${({column,span}) => column * 1/span});
+  height: calc(100% / ${({column}) => column});
   background: ${({image}) => image ? `url(${image})` : '#ff000020'} no-repeat center center;
   background-size: 100% 100%;
   position: relative;
   grid-column: span ${({span}) => span};
-
+  float: left;
 
   &:hover {
     color: white;
