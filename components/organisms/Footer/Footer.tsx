@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 const Footer = () => <SFooter>
     <p>(주)한울기획</p>
-    <p>30151 세종특별자치시 시청대로 213 2층 206호(보람동, 금강베네치아)</p>
-    <p>대표자 : 박정하  |  사업자등록번호 : 889-12-01176  |  전화번호 : 044-212-8391  |  이메일 : hannuul@naver.com</p>
+    <p>30151 세종특별자치시 시청대로 213 2층 206호(보람동, 금강베네치아) 대표자 : 박정하  |  사업자등록번호 : 889-12-01176  |  전화번호 : 044-212-8391  |  이메일 : hannuul@naver.com</p>
     <p>COPYRIGHT © hanul. ALL RIGHTS RESERVED</p>
 </SFooter>
 
@@ -21,16 +20,18 @@ const SFooter = styled.footer`
   
   & p {
     color: white;
-    font-size: 12px;
+    font-size: 1.2vw;
     line-height: 20px;
     font-family: 'Noto Sans KR', sans-serif;
     text-align: center;
 
   }
 
-  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
-    font-size: 15px;
-    margin: 5px 30px;
+  @media only screen and (min-width: ${({theme}) => theme.media.tablet}px) {
+    & p {
+      font-size: 14px;
+      margin: 5px 30px;
+    }
   }
 `
 
