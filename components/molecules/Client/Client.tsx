@@ -6,11 +6,11 @@ interface IClient {
 const Client = ({image}) => <SClient image={image}/>
 
 const SClient = styled.li<IClient>`
-  width: 300px;
+  width: 310px;
   height: 85px;
   margin: 10px;
   
-  background: url(${({image})=> image}) no-repeat;
+  background: url(${({image})=> image}) no-repeat center;
   background-size: 100% 100%;
 `
 
