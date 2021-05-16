@@ -16,6 +16,7 @@ const ImageGridItem = ({image, text, handleGridItemClick, column, span = 1}: IIm
 
     const handleResize = () => {
         const imageGridItem = imageGridRefItem.current
+        imageGridItem.style.width = (imageGridItem.parentElement.offsetWidth / column * span) + 'px'
         imageGridItem.style.height = (imageGridItem.offsetWidth / span) + 'px'
     }
 
