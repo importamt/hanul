@@ -9,7 +9,7 @@ const SResolution = styled.section`
   width: 100%;
   min-height: 270px;
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   font-family: 'Noto Sans KR', sans-serif;
