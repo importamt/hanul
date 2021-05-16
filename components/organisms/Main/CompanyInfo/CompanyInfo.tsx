@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ReactDOMServer from 'react-dom/server';
 import {useEffect} from "react";
+import Link from 'next/link'
 
 export const CompanyInfo = () => {
 
@@ -53,9 +54,36 @@ export const CompanyInfo = () => {
                 <a href={'tel:010-5352-8391'}>010-5352-8391</a>
             </li>
             <li>hannuul@naver.com</li>
+            <li>
+                <Link href={'/'}>
+                    <SHomepageButton>www.hannuul.com</SHomepageButton>
+                </Link>
+            </li>
         </SEtc>
     </SCompanyInfo>
 }
+
+const SHomepageButton = styled.button`
+  cursor: pointer;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  border-radius: 10px;
+  width: 180px;
+  height: 30px;
+  color: white;
+  background-color: #0475f4;
+
+  &:hover {
+    background-color: #0475f4C0;
+  }
+
+  &:active {
+    background-color: #0475f4;
+  }
+`
 
 const SCompanyInfo = styled.section`
   width: 100%;
@@ -110,18 +138,22 @@ const SEtc = styled.ul`
     display: inline-block;
     margin-right: 20px;
   }
+
   & li:nth-child(1):before {
+    background: url(${phoneIcon}) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  & li:nth-child(3):before {
     background: url(${mobileIcon}) no-repeat;
     background-size: 100% 100%;
   }
+
   & li:nth-child(2):before {
     background: url(${addressIcon}) no-repeat;
     background-size: 100% 100%;
   }
-  & li:nth-child(3):before {
-    background: url(${phoneIcon}) no-repeat;
-    background-size: 100% 100%;
-  }
+
   & li:nth-child(4):before {
     background: url(${emailIcon}) no-repeat;
     background-size: 100% 100%;
