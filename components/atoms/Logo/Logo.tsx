@@ -6,7 +6,7 @@ const SLogo = styled.a`
   cursor: pointer;
   position: relative;
   width: 396px;
-  height: 126px;
+  height: 106px;
   background: url(${logoImage}) center center no-repeat;
   background-size: 75% 75%;
 
