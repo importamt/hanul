@@ -39,8 +39,9 @@ const SClientsWrap = styled.section`
 
 const SClients = styled.ul`
   display: flex;
-  padding: 0 15vw;
+  padding: 0 18vw;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `
