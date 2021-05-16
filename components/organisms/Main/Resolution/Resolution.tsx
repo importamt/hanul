@@ -27,7 +27,7 @@ const SResolution = styled.section`
   & p {
     color: black;
     font-size: 15px;
-    line-height: 60px;
+    line-height: 28px;
     font-weight: 300;
     text-align: center;
   }
