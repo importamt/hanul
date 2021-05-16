@@ -12,7 +12,7 @@ const SNavigation = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 50px;
 `
 
 export default Navigation
