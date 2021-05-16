@@ -97,9 +97,9 @@ const SHeroText = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 2.5vw;
+  line-height: 2.8vw;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   font-weight: 400;
 
   @media only screen and (min-width: ${({theme}) => theme.media.tablet}px) {
@@ -120,6 +120,19 @@ const SSendButton = styled.button`
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 17px;
   font-weight: 400;
+  
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  color: white;
+  background-color: ${({theme}) => theme.colors.main};
+  
+  &:hover {
+    background-color: ${({theme}) => theme.colors.main}C0;
+  }
+  &:active {
+    background-color: ${({theme}) => theme.colors.main};
+  }
 `
 
 export default ContactUs
