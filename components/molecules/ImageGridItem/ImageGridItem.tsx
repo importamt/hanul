@@ -33,7 +33,7 @@ const SHover = styled.aside`
   &:hover {
     transition: background-color 500ms, color 500ms;
     color: white;
-    background: #000000C0;
+    background: rgba(0,0,0, 0.7);
 
     & .dot {
       background-color: white;
@@ -53,7 +53,7 @@ const SImageGridItem = styled.li<{
 }>`
   width: calc(100% / ${({column,span}) => column * 1/span});
   height: calc(100% / ${({column}) => column});
-  background: ${({image}) => image ? `url(${image})` : '#ff000020'} no-repeat center center;
+  background: ${({image}) => image ? `url(${image})` : '#000000'} no-repeat center center;
   background-size: 100% 100%;
   position: relative;
   grid-column: span ${({span}) => span};
@@ -61,7 +61,6 @@ const SImageGridItem = styled.li<{
 
   &:hover {
     color: white;
-    background-blend-mode: darken;
   }
 `
 

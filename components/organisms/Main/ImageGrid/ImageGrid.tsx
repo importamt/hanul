@@ -40,6 +40,7 @@ const SImageGrid = styled.ul<{
 
   max-width: 1280px;
   width: 100vw;
+  overflow: hidden;
 
   //display: grid;
   //grid-template-rows: repeat(${({row}) => row}, 1fr);

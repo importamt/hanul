@@ -77,7 +77,7 @@ const SHomepageButton = styled.button`
   background-color: #0475f4;
 
   &:hover {
-    background-color: #0475f4C0;
+    background-color: rgba(113, 166, 226, 0.75);
   }
 
   &:active {

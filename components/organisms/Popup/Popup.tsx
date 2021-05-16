@@ -24,10 +24,10 @@ const SBackground = styled.aside`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   z-index: 1000;
 
-  background: #00000080;
+  background: rgba(0, 0, 0, 0.5);
 `
 
 const SPopup = styled.aside<{
