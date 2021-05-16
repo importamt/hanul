@@ -32,7 +32,7 @@ const SResolution = styled.section`
     text-align: center;
   }
   
-  &:after {
+  &:before {
     content: '';
     position: absolute;
     top: 0;
@@ -43,6 +43,7 @@ const SResolution = styled.section`
     min-height: 200px;
     height: 25vw;
     max-height: 350px;
+    z-index: -1;
     background: url(${grayLogo}) no-repeat 0 -5vw;
     background-size: 100% 100%;
   }
