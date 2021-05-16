@@ -79,6 +79,10 @@ const SMap = styled.section`
   border-radius: 15px;
 `
 
+const mobileIcon = '/images/contact-us/mobile_icon.png'
+const addressIcon = '/images/contact-us/address_icon.png'
+const phoneIcon = '/images/contact-us/phone_icon.png'
+const emailIcon = '/images/contact-us/email_icon.png'
 const SEtc = styled.ul`
   display: flex;
   flex-direction: column;
@@ -100,11 +104,27 @@ const SEtc = styled.ul`
 
   & li:before {
     content: '';
-    min-width: 30px;
-    height: 30px;
-    background: black;
+    min-width: 33px;
+    height: 33px;
+    //background: black;
     display: inline-block;
     margin-right: 20px;
+  }
+  & li:nth-child(1):before {
+    background: url(${mobileIcon}) no-repeat;
+    background-size: 100% 100%;
+  }
+  & li:nth-child(2):before {
+    background: url(${addressIcon}) no-repeat;
+    background-size: 100% 100%;
+  }
+  & li:nth-child(3):before {
+    background: url(${phoneIcon}) no-repeat;
+    background-size: 100% 100%;
+  }
+  & li:nth-child(4):before {
+    background: url(${emailIcon}) no-repeat;
+    background-size: 100% 100%;
   }
 `
 
