@@ -104,12 +104,21 @@ const MainPage = () => {
 const SImageGridText = styled.b`
   text-align: center;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 16px;
   line-height: 50px;
+  font-size: 7px;
+
+  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+    font-size: 16px;
+  }
 `
 
 const SImageGridTitle = styled(SImageGridText)`
-  font-size: 20px;
+  font-size: 10px;
+
+  @media only screen and (min-width: ${({theme}) => theme.media.mobile}px) {
+    font-size: 20px;
+
+  }
 `
 
 export const SImageGridDot = styled.figure`
