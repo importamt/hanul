@@ -86,7 +86,7 @@ const MainPage = () => {
         {selectedPopup && <Popup {...selectedPopup} handleCloseClick={() => setSelectedPopup(null)}/>}
         <Header/>
         <Hero
-            image={'/images/main/hero.png'}
+            image={'/images/main/hero.gif'}
             height={403}>
             <SHeroText>Creative Design Group!</SHeroText>
         </Hero>
