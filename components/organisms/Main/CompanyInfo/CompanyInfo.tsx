@@ -45,7 +45,7 @@ export const CompanyInfo = () => {
         <SMap id={'kakaoMap'}/>
         <SEtc>
             <li>
-                <a href={'tel:044-250-8391'}>044-250-8391</a>
+                <a href={'tel:044-998-0069'}>044-998-0069</a>
             </li>
             <li>
                 세종특별자치시 시청대로 213 2층 206호(보람동, 금강베네치아)
@@ -122,7 +122,7 @@ const SEtc = styled.ul`
 
   & li, & a {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     color: black;
     line-height: 30px;

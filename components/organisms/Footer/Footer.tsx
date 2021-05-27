@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Footer = () => <SFooter>
     <strong>한울기획</strong>
     <p>30151 세종특별자치시 시청대로 213 2층 206호(보람동, 금강베네치아)</p>
-    <p>대표자 : 박정하 | 사업자등록번호 : 889-12-01176 | 전화번호 : 044-212-8391 | 이메일 : hannuul@naver.com</p>
+    <p>대표자 : 박정하 | 사업자등록번호 : 889-12-01176 | 전화번호 : 044-998-0069 | 이메일 : hannuul@naver.com</p>
     <p>COPYRIGHT © hannuul. ALL RIGHTS RESERVED</p>
 </SFooter>
 
