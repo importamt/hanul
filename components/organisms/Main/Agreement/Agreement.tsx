@@ -12,7 +12,7 @@ export const Agreement = ({isAgree, setAgree}: IAgreement) => {
             1. 정보수집의 이용 목적 : 상담 및 진행<br/>
             2. 수집/이용 항목 : 이름, 휴대전화, 이메일, 상담내용<br/>
             3. 보유 및 이용기간 : 상담 종료후 6개월, 정보제공자의 삭제 요청시 즉시<br/>
-            4. 개인정보처리담당 : 전화 044-212-8391 / 이메일 hannuul@naver.com<br/>
+            4. 개인정보처리담당 : 전화 044-998-0069 / 이메일 hannuul@naver.com<br/>
         </SAgreement>
         <SAgreementCheck>
             개인정보 수집 및 이용에 동의합니다.
