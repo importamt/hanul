@@ -17,7 +17,7 @@ const About = () => {
         </Resolution>
         <Hero
             image={'/images/about/hero2.png'}
-            height={1230}/>
+            height={900}/>
         <Clients/>
         <Footer/>
     </SAbout>
