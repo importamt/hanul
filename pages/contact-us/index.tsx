@@ -75,12 +75,27 @@ const ContactUs = () => {
             message={message}
             setMessage={setMessage}
         />
+
         <Agreement isAgree={isAgree} setAgree={setAgree}/>
         <SSendButton onClick={sendEmail}>SEND</SSendButton>
         <CompanyInfo/>
         <Footer/>
+
+        <FloatingGrayLogo/>
     </SContact>
 }
+
+const grayLogo = '/images/common/gray_logo.png'
+const FloatingGrayLogo = styled.figure`
+  width: 20vw;
+  height: 20vw;
+  background: url(${grayLogo}) no-repeat center;
+  background-size: 100% 100%;
+  position: absolute;
+  //opacity: 0.8;
+  top: 50vh;
+  right: 10px;
+`
 
 
 const SBlock = styled.div`
@@ -113,6 +128,7 @@ const SContact = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 `
 
 const SSendButton = styled.button`
